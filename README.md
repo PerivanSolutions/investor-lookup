@@ -49,4 +49,8 @@ The spreadsheet should be in CSV format.
 
 From the project directory:
 
-    bundle exec rake investor:upload spreadsheet=path/to/spreadsheet.csv
+    bundle exec rake investor:upload csv=path/to/spreadsheet.csv
+
+To add the links to the PDFs
+
+    bundle exec rake investor:pdfs
