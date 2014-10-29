@@ -6,7 +6,7 @@ try {
     return;
 }
 $prepared_query = $dbh->prepare(
-  'SELECT * FROM investors WHERE partner_code = ?'
+  'SELECT * FROM investors WHERE partner_code = ? COLLATE NOCASE'
 );
 $prepared_query->execute([$_GET['partner_code']]);
 $data = $prepared_query->fetchAll();
