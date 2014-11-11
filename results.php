@@ -168,7 +168,7 @@ foreach ($data as $index=>$order) {
 </p>
 <?php
   if ($order['pdf']) {
-    echo "<a href=" . $order['pdf'] . " target='_blank'>Click here to view your personalisation for your Investor order</a><br><br>";
+    echo "<a href=\"" . $order['pdf'] . "\" target='_blank'>Click here to view your personalisation for your Investor order</a><br><br>";
   }
 } ?>
 </body>
