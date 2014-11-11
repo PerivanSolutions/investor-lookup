@@ -85,50 +85,50 @@ if (count($data) == 0) {
 foreach ($data as $index=>$order) {
 ?>
 <h2>
-  Address <?php echo $index + 1; ?> of <?php echo count($data); ?>
+  Address <?= $index + 1; ?> of <?= count($data); ?>
 </h2>
 <table>
   <tr>
     <td>Name</td>
-    <td><?php echo $order['name']; ?></td>
+    <td><?= $order['name']; ?></td>
   </tr>
   <tr>
     <td>Partner Code</td>
-    <td><?php echo $order['partner_code']; ?></td>
+    <td><?= $order['partner_code']; ?></td>
   </tr>
   <tr><td><br></td></tr>
   <tr>
     <td>Investor Delivery Address</td>
-    <td><?php echo $order['address0']; ?></td>
+    <td><?= $order['address0']; ?></td>
   </tr>
   <tr>
     <td><i>Please note for Personalised Only</i></td>
-    <td><?php echo $order['address1']; ?></td>
+    <td><?= $order['address1']; ?></td>
   </tr>
   <tr>
     <td><i>this may differ to your inside front cover</i></td>
-    <td><?php echo $order['address2']; ?></td>
+    <td><?= $order['address2']; ?></td>
   </tr>
   <tr>
     <td></td>
-    <td><?php echo $order['address3']; ?></td>
+    <td><?= $order['address3']; ?></td>
   </tr>
   <tr>
     <td></td>
-    <td><?php echo $order['post_code']; ?></td>
+    <td><?= $order['post_code']; ?></td>
   </tr>
   <tr><td><br></td></tr>
   <tr>
     <td>Personalised Investor</td>
-    <td><?php echo $order['pim_quantity']; ?></td>
+    <td><?= $order['pim_quantity']; ?></td>
   </tr>
   <tr>
     <td>Investment Review</td>
-    <td><?php echo $order['qir_quantity']; ?></td>
+    <td><?= $order['qir_quantity']; ?></td>
   </tr>
   <tr>
     <td>Generic Investor</td>
-    <td><?php echo $order['gim_quantity']; ?></td>
+    <td><?= $order['gim_quantity']; ?></td>
   </tr>
   <tr><td><br></td></tr>
   <tr>
@@ -139,15 +139,15 @@ foreach ($data as $index=>$order) {
   </tr>
   <tr>
     <td>&bull; Generic CD &amp; Wallet</td>
-    <td><?php echo $order['cd_wallet']; ?></td>
+    <td><?= $order['cd_wallet']; ?></td>
   </tr>
   <tr>
     <td>&bull; Generic CD &amp; Personalised Wallet</td>
-    <td><?php echo $order['cd_custom_wallet']; ?></td>
+    <td><?= $order['cd_custom_wallet']; ?></td>
   </tr>
   <tr>
     <td>&bull; Personalised Wallet &amp; Recording</td>
-    <td><?php echo $order['cd_custom_wallet_rec']; ?></td>
+    <td><?= $order['cd_custom_wallet_rec']; ?></td>
   </tr>
   <tr><td><br></td></tr>
   <tr>
@@ -156,11 +156,11 @@ foreach ($data as $index=>$order) {
   </tr>
   <tr>
     <td>&bull; Generic</td>
-    <td><?php echo $order['trust_cd_generic']; ?></td>
+    <td><?= $order['trust_cd_generic']; ?></td>
   </tr>
   <tr>
     <td>&bull; Personalised</td>
-    <td><?php echo $order['trust_cd_personal']; ?></td>
+    <td><?= $order['trust_cd_personal']; ?></td>
   </tr>
 </table>
 <p>
