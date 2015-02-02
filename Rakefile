@@ -31,10 +31,10 @@ namespace :db do
 end
 
 namespace :investor do
-  desc "Upload a new investor csv spreadsheet to the database.\n"\
-  'csv=/path/to/csv'
+  desc "Upload a new investor csv spreadsheet to the database.
+'csv=/path/to/csv'"
   task upload: [:environment, :'db:clear'] do
-    fail 'Pass arg: csv=/path/to/csv' unless ENV['csv']
+    fail "Pass arg: csv=/path/to/csv\n" unless ENV['csv']
 
     header_map = {
       'Partner Code' => :partner_code,
@@ -56,11 +56,9 @@ namespace :investor do
     }
 
     CSV.read(ENV['csv'], headers: true).each do |row|
-
       Investor.create(
-        row.select do |e|
-          header_map.keys.include? e.first
-        end.each_with_object({}) do |attribute, acc|
+        row.each_with_object({}) do |attribute, acc|
+          next unless header_map.keys.include? attribute.first
           acc[header_map[attribute.first]] = attribute.last if attribute.last
         end
       )
@@ -83,4 +81,13 @@ task :environment do
     adapter:  'sqlite3',
     database: 'investors.sqlite3'
   )
+end
+
+desc 'Cleanse a file with bad encoding'
+task :cleanse do
+  fail "Pass file: file=/path/to/file\n" unless ENV['file']
+  file = File.read(ENV['file'])
+         .encode('binary', invalid: :replace, undef: :replace, replace: '')
+         .encode('UTF-8')
+  File.write "out-#{ENV['file']}", file
 end

@@ -54,3 +54,15 @@ From the project directory:
 To add the links to the PDFs
 
     bundle exec rake investor:pdfs
+
+### Troubleshooting
+
+##### ArgumentError:invalid byte sequence in UTF-8
+
+Some of our data is malformed somehow, so a `cleanse` task is included that
+will hopefully resolve any csv encoding issues. Check the output file
+afterwards.
+
+   bundle exec rake cleanse file=path/to/file.csv
+
+Output will be written to `out-FILENAME`.
